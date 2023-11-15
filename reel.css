@@ -1,0 +1,106 @@
+@font-face {
+  font-family: myFont;
+  src: url(c254d37f98c38e79c518.ttf);
+}
+
+*,
+*::after,
+*::before {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'myFont', sans-serif;
+  font-style: italic;
+  background-color: rgb(61, 61, 61);
+  text-align: center;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.data {
+  position: absolute;
+  bottom: 126px;
+  width: 100%;
+}
+
+#main {
+  height: 1920px;
+  width: 1080px;
+  display: inline-block;
+  position: relative;
+  /* background-color: #eaeaea; */
+  /* padding-top: 285px; */
+}
+#image-container {
+  background-image: url('https://img.bstn.com/eyJidWNrZXQiOiJic3RuLWltYWdlLXNlcnZlciIsImtleSI6ImNhdGFsb2cvcHJvZHVjdC83MTA5Mjk1OTYwMDEvNzEwOTI5NTk2MDAxLTAxLmpwZyIsImVkaXRzIjp7InJlc2l6ZSI6eyJmaXQiOiJjb250YWluIiwid2lkdGgiOjU4MCwiaGVpZ2h0Ijo3MjUsImJhY2tncm91bmQiOnsiciI6MjU1LCJnIjoyNTUsImIiOjI1NSwiYWxwaGEiOjF9fX19');
+  /* width: 952px; */
+  height: 978px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  margin: 0 auto;
+  margin-top: 46px;
+  position: relative;
+  bottom: 54px;
+}
+
+/* img {
+  width: 952px;
+  height: 1189px;
+} */
+
+#details {
+  position: absolute;
+  top: 1235px;
+  width: 1080px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 171px;
+  line-height: 171px;
+  color: #eb3b5a;
+}
+
+h2 {
+  font-size: 61px;
+  line-height: 61px;
+  color: #737373;
+}
+
+h3 {
+  font-size: 56px;
+  line-height: 56px;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #737373;
+  font-style: normal;
+  font-weight: 200;
+}
+
+h4 {
+  font-size: 36px;
+  line-height: 36px;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  color: #00000080;
+  font-style: normal;
+  margin-top: 105px;
+}
+
+#url {
+  font-size: 36px;
+  line-height: 36px;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 200;
+  color: #0000005c;
+  font-style: normal;
+  margin-top: 207px;
+  margin-bottom: 39px;
+  position: relative;
+  z-index: 50;
+}
+

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Chrome Extension</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+    <script src="./js/bootstrap.bundle.js"></script>
+
+    <link rel="stylesheet" href="main.scss" />
+    <link rel="stylesheet" href="./css/bootstrap.css" />
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <h1 class="title">easyShot</h1>
+    <nav class="d-flex justify-content-between text-center">
+      <a href="#" class="twitter flex-grow-1 active">Twitter</a>
+      <a href="#" class="settings flex-grow-1">Settings</a>
+    </nav>
+    <section hidden class="settings">
+      <form class="d-flex flex-column justify-content-start gap-2" action="">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon3">Deployment url</span>
+          <input type="text" required class="form-control" id="deploymentUrl" />
+        </div>
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon3">Api key</span>
+          <input type="text" required class="form-control" id="apiKey" />
+        </div>
+
+        <div class="input-group">
+          <textarea class="form-control" placeholder="Input prefix here" id="promptPrefix" style="height: 60px; width: 100%"></textarea>
+        </div>
+
+        <div class="input-group">
+          <textarea class="form-control" placeholder="Input suffex here" id="promptSuffex" style="height: 60px; width: 100%"></textarea>
+        </div>
+        <div class="input-group">
+          <span class="input-group-text">Discount %</span>
+          <input type="number" class="form-control" id="discountPercentage" />
+        </div>
+        <div class="input-group">
+          <span class="input-group-text" style="width: 60px">Code</span>
+          <input type="text" class="form-control" style="width: 180px" id="discountCode" />
+          <span class="input-group-text">Size(80)</span>
+          <input type="number" min="12" class="form-control" id="codeSize" value="26" />
+        </div>
+        <div class="input-group">
+          <span class="input-group-text">Comment</span>
+          <input type="text" class="form-control" id="comment" />
+        </div>
+        <div class="d-flex align-items-center gap-2">
+          <div class="d-flex align-items-center justify-content-between flex-grow-1">
+            <button id="scrape-btn" type="submit" class="btn btn-primary btn-lg flex-fill">Scrape to csv</button>
+          </div>
+          <div class="d-flex gap-2 align-items-center">
+            <input class="form-check-input" type="checkbox" id="devModeToggle" role="switch" id="flexSwitchCheckDefault" />
+            <label style="color: black" for="devModeToggle">DevMode</label>
+          </div>
+        </div>
+        <div class="code-preview"></div>
+      </form>
+    </section>
+    <section class="twitter">
+      <div class="d-flex justify-content-evenly gap-2">
+        <div class="input-group py-2 px-1 flex-shrink-1 w-75">
+          <span class="input-group-text">Server password</span>
+          <input class="form-control" id="server-password" type="password" placeholder="" />
+        </div>
+        <div class="form-check d-flex align-items-center w-25 gap-1 flex-grow-1">
+          <input class="form-check-input" type="checkbox" value="" id="useRedirect" />
+          <label class="form-check-label" for="useRedirect">Use redirect</label>
+        </div>
+      </div>
+
+      <textarea class="w-100 border-0" name="" id="tweet-textarea" rows="6"> </textarea>
+      <div class="d-flex align-items-center gap-2">
+        <div class="input-group py-2 px-1 flex-shrink-1 w-75">
+          <span class="input-group-text">Images to use</span>
+          <input class="form-control" id="images-to-use" placeholder="1,3,4,..." />
+        </div>
+        <div class="form-check d-flex flex-grow-1 align-items-center w-25 gap-1">
+          <input class="form-check-input" type="checkbox" value="" id="ignoreSaleSettings" />
+          <label class="form-check-label" for="ignoreSaleSettings">Ignore Sale Settings</label>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-between gap-2">
+        <button type="button" id="generate-tweet" class="btn btn-success w-50 text-white fw-bolder text-capitalize">Generate a tweet</button>
+        <button type="button" id="send-tweet" class="btn btn-primary w-50 fw-bolder text-bg-dark text-capitalize">Tweet</button>
+      </div>
+      <p id="message" class="alert-info"></p>
+      <div>
+        <small>Images can take time to load but you dont have to wait to "Tweet"</small>
+        <div id="image-container" class=""></div>
+      </div>
+    </section>
+
+    <script src="popup.js"></script>
+
+    <!--
+      This HTML file opens when you click on icon from the toolbar.
+
+      To begin the development, run `npm run watch`.
+      To create a production bundle, use `npm run build`.
+    -->
+  </body>
+</html>

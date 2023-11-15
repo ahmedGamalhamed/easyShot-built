@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Easyshot",
+  "version": "3.0",
+  "description": "My Chrome Extension",
+  "icons": {
+    "16": "icons/icon.png",
+    "32": "icons/icon.png",
+    "48": "icons/icon.png",
+    "128": "icons/icon.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Easyshot",
+    "default_popup": "popup.html"
+  },
+  "permissions": ["storage", "scripting", "tabs", "contextMenus"],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "run_at": "document_end",
+      "js": ["contentScript.js"]
+    }
+  ],
+  "host_permissions": ["<all_urls>"]
+}
